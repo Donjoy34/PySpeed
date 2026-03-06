@@ -1,3 +1,8 @@
+from profiler import tracer
+from profiler.exporter import export_json
+
+
+export_json(tracer.stats)
 def generate_report(stats):
 
     print("\nPyPulse Performance Report\n")
