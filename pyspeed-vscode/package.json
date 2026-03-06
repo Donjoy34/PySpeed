@@ -1,0 +1,37 @@
+{
+  "name": "pyspeed",
+  "displayName": "PySpeed",
+  "description": "Real-time Python performance profiler. Displays execution time and memory usage next to Python function definitions while coding.",
+  "version": "0.1.0",
+  "publisher": "donjoy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Donjoy34/PySpeed.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pyspeed.start",
+        "title": "Start PySpeed Profiler"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}

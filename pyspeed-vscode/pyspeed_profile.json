@@ -1,0 +1,10 @@
+{
+  "my_func": {
+    "time": 0.0123,
+    "memory": 4.56
+  },
+  "another_func": {
+    "time": 0.0041,
+    "memory": 1.72
+  }
+}
