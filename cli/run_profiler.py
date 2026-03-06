@@ -1,24 +1,32 @@
 import runpy
 import sys
 import os
+import threading
 
 sys.path.append(os.getcwd())
 
 from profiler.tracer import FunctionTracer
 from profiler.report import generate_report
+from profiler.dashboard import LiveDashboard
 
 
 def run_script(script_path):
-    print("Starting profiler...")
 
     tracer = FunctionTracer()
+
+    dashboard = LiveDashboard(tracer.stats)
+
+    dashboard_thread = threading.Thread(
+        target=dashboard.run,
+        daemon=True
+    )
+
+    dashboard_thread.start()
 
     tracer.start()
 
     runpy.run_path(script_path)
 
     tracer.stop()
-
-    print("Execution finished\n")
 
     generate_report(tracer.stats)
